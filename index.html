@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d16">
+  <meta name="description" content="Твой следующий ход. Открой платформу и начни знакомство.">
+  <title>Твой следующий ход — Premium Poker</title>
+
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s){
+      if(f.fbq)return;
+      n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+      t=b.createElement(e);t.async=!0;t.src=v;
+      s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s);
+    }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','2655185038263270');
+    fbq('track','PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=2655185038263270&ev=PageView&noscript=1" alt="">
+  </noscript>
+
+  <style>
+    :root{
+      --night:#080d16;
+      --navy:#101b2b;
+      --emerald:#123c36;
+      --silver:#edf1f5;
+      --muted:#a6b1bf;
+      --line:rgba(224,235,246,.14);
+      --ice:#cbd9e8;
+      --max:1220px;
+    }
+    *{box-sizing:border-box}
+    html{min-height:100%;background:var(--night)}
+    body{
+      margin:0;min-height:100vh;color:var(--silver);
+      font-family:Inter,Arial,Helvetica,sans-serif;
+      -webkit-font-smoothing:antialiased;
+      background:var(--night);
+    }
+    a{color:inherit;text-decoration:none}
+    .hero{
+      min-height:100svh;position:relative;overflow:hidden;isolation:isolate;
+      background:
+        radial-gradient(ellipse at 76% 52%,rgba(29,91,78,.32),transparent 34%),
+        radial-gradient(ellipse at 90% 10%,rgba(80,112,151,.18),transparent 35%),
+        linear-gradient(112deg,#080d16 0%,#101a29 58%,#09131d 100%);
+    }
+    .hero:before{
+      content:"";position:absolute;inset:0;z-index:-1;opacity:.24;
+      background:
+        linear-gradient(90deg,transparent 0 65%,rgba(210,227,245,.12) 65.1%,transparent 65.35%),
+        repeating-linear-gradient(135deg,transparent 0 76px,rgba(210,227,245,.025) 77px 78px);
+      mask-image:linear-gradient(90deg,transparent,#000 62%);
+    }
+    .wrap{width:min(var(--max),calc(100% - 72px));margin:0 auto}
+    .topbar{
+      height:86px;display:flex;align-items:center;justify-content:space-between;
+      border-bottom:1px solid var(--line);position:relative;z-index:5;
+    }
+    .brand{display:flex;align-items:center;gap:14px;font-size:11px;letter-spacing:.24em;font-weight:750}
+    .brand-mark{
+      width:27px;height:27px;border:1px solid rgba(231,239,247,.72);
+      display:grid;place-items:center;transform:rotate(45deg);
+    }
+    .brand-mark:after{content:"";width:7px;height:7px;background:var(--ice);border-radius:50%}
+    .top-note{font-size:9px;letter-spacing:.24em;color:#9baabd;text-transform:uppercase}
+    .hero-grid{
+      min-height:calc(100svh - 86px);display:grid;grid-template-columns:49% 51%;
+      align-items:center;position:relative;
+    }
+    .copy{position:relative;z-index:3;padding:54px 0 78px}
+    .eyebrow{font-size:10px;letter-spacing:.3em;color:#a9bfd2;text-transform:uppercase;margin-bottom:35px}
+    h1{
+      max-width:700px;margin:0;color:#f0f2f4;
+      font-family:Georgia,'Times New Roman',serif;font-weight:400;
+      font-size:clamp(72px,8.2vw,118px);line-height:.91;letter-spacing:-.065em;
+    }
+    .subtitle{font-size:17px;line-height:1.7;color:#b8c4d1;margin:31px 0 0;max-width:380px}
+    .cta-row{display:flex;align-items:center;gap:22px;margin-top:39px;flex-wrap:wrap}
+    .cta{
+      display:inline-flex;align-items:center;justify-content:center;gap:28px;
+      min-height:60px;padding:0 29px;background:#e2eaf1;color:#0b1420;
+      font-size:10px;font-weight:800;letter-spacing:.17em;text-transform:uppercase;
+      border:1px solid rgba(255,255,255,.45);
+      transition:transform .22s ease,background .22s ease,box-shadow .22s ease;
+      box-shadow:0 12px 35px rgba(0,0,0,.2);
+    }
+    .cta:hover{transform:translateY(-3px);background:#fff;box-shadow:0 17px 40px rgba(0,0,0,.3)}
+    .cta:focus-visible{outline:2px solid #d9e8f6;outline-offset:4px}
+    .cta .arrow{font-size:18px;font-weight:400}
+    .micro{display:block;margin-top:27px;font-size:9px;letter-spacing:.22em;color:#91a2b5;text-transform:uppercase}
+    .visual{height:min(76vh,760px);min-height:520px;position:relative;display:grid;place-items:center}
+    .halo{
+      width:min(48vw,620px);aspect-ratio:1;border-radius:50%;position:absolute;
+      border:1px solid rgba(194,218,235,.18);
+      box-shadow:0 0 110px rgba(52,110,112,.12),inset 0 0 90px rgba(52,110,112,.08);
+    }
+    .halo:before,.halo:after{content:"";position:absolute;border:1px solid rgba(194,218,235,.11);border-radius:50%}
+    .halo:before{inset:10%}.halo:after{inset:21%}
+    .table-scene{
+      width:min(43vw,560px);aspect-ratio:1.12;position:relative;z-index:1;
+      transform:rotate(-10deg);filter:drop-shadow(0 38px 38px rgba(0,0,0,.48));
+    }
+    .table{
+      position:absolute;inset:12% 2%;border-radius:50%;
+      background:
+        radial-gradient(ellipse at 45% 35%,rgba(50,111,91,.55),transparent 54%),
+        linear-gradient(145deg,#174b40,#10332f 64%,#0b1d20);
+      border:12px solid #111a22;
+      box-shadow:inset 0 0 0 1px rgba(218,231,245,.25),inset 0 0 65px rgba(0,0,0,.56),0 28px 60px rgba(0,0,0,.5);
+    }
+    .table:before{
+      content:"";position:absolute;inset:8%;border:1px solid rgba(224,235,242,.19);border-radius:50%;
+    }
+    .card{
+      position:absolute;width:19%;aspect-ratio:.70;border-radius:7px;
+      background:linear-gradient(145deg,#fbfaf5,#d9d9d2);color:#17232c;
+      box-shadow:0 17px 28px rgba(0,0,0,.42);
+      font-family:Georgia,'Times New Roman',serif;font-weight:bold;
+      padding:11px 10px;font-size:clamp(17px,2vw,26px);
+      border:1px solid rgba(255,255,255,.75);
+    }
+    .card:after{content:"";position:absolute;inset:5px;border:1px solid rgba(20,35,48,.12);border-radius:3px}
+    .card-a{left:34%;top:25%;transform:rotate(-7deg)}
+    .card-k{left:49%;top:32%;transform:rotate(11deg)}
+    .chip{
+      position:absolute;width:12%;aspect-ratio:1;border-radius:50%;
+      background:repeating-conic-gradient(#dce3e8 0 9deg,#273b43 9deg 18deg);
+      box-shadow:0 13px 19px rgba(0,0,0,.5);
+      border:1px solid rgba(230,238,243,.4);
+    }
+    .chip:after{content:"";position:absolute;inset:23%;border-radius:50%;background:#1d3838;border:1px solid #a6bbc2;box-shadow:inset 0 0 0 2px rgba(0,0,0,.2)}
+    .chip-one{left:66%;top:57%}.chip-two{left:74%;top:49%}.chip-three{left:77%;top:65%}
+    .lightline{
+      position:absolute;width:1px;height:76%;right:10%;top:8%;
+      background:linear-gradient(transparent,rgba(206,226,239,.38),transparent);transform:rotate(23deg)
+    }
+    .corner-note{
+      position:absolute;right:0;bottom:36px;color:#718398;
+      font-size:8px;letter-spacing:.24em;text-transform:uppercase;
+    }
+    @media(max-width:800px){
+      .wrap{width:calc(100% - 44px)}
+      .topbar{height:72px}.top-note{display:none}
+      .hero-grid{min-height:calc(100svh - 72px);grid-template-columns:1fr;grid-template-rows:auto 1fr;align-items:start}
+      .copy{padding:clamp(66px,12vh,110px) 0 0}
+      .eyebrow{font-size:9px;margin-bottom:27px}
+      h1{font-size:clamp(62px,13.5vw,100px);line-height:.94;max-width:650px}
+      .subtitle{font-size:15px;margin-top:22px;max-width:340px}
+      .cta-row{margin-top:28px;display:block;max-width:360px}
+      .cta{width:100%;min-height:58px}
+      .micro{margin-top:22px;text-align:center;font-size:8px}
+      .visual{height:clamp(280px,42vh,390px);min-height:280px;margin-top:-2px}
+      .halo{width:min(84vw,390px)}
+      .table-scene{width:min(78vw,365px)}
+      .corner-note{display:none}
+    }
+    @media(max-width:390px){
+      .wrap{width:calc(100% - 34px)}
+      .copy{padding-top:62px}
+      h1{font-size:clamp(55px,13vw,72px)}
+      .subtitle{font-size:14px}
+      .visual{height:270px;min-height:270px}
+      .table-scene{width:82vw}
+    }
+    @media(max-height:720px) and (min-width:801px){
+      .hero-grid{min-height:calc(100svh - 72px)}
+      .copy{padding:28px 0 40px}
+      .visual{min-height:470px}
+      h1{font-size:clamp(66px,7.2vw,100px)}
+    }
+    @media(prefers-reduced-motion:reduce){.cta{transition:none}}
+  </style>
+</head>
+<body>
+  <main class="hero">
+    <header class="wrap topbar">
+      <a class="brand" href="#" aria-label="Premium Poker">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>PREMIUM POKER</span>
+      </a>
+      <span class="top-note">ОНЛАЙН-ПОКЕР · ТВОЙ СЛЕДУЮЩИЙ ХОД</span>
+    </header>
+
+    <section class="wrap hero-grid" aria-label="Premium Poker">
+      <div class="copy">
+        <div class="eyebrow">ПРЕМИАЛЬНЫЙ ОНЛАЙН-ПОКЕР</div>
+        <h1>ТВОЙ<br>СЛЕДУЮЩИЙ<br>ХОД.</h1>
+        <p class="subtitle">Открой платформу и начни знакомство.</p>
+        <div class="cta-row">
+          <a class="cta" href="https://t.me/+dm8CamG_BfljODEy"
+             target="_blank" rel="noopener noreferrer"
+             onclick="if(window.fbq)fbq('track','Lead');">
+            ОТКРЫТЬ ПОКЕР <span class="arrow">↗</span>
+          </a>
+        </div>
+        <span class="micro">ТВОЙ МОМЕНТ. ТВОИ ПРАВИЛА.</span>
+      </div>
+
+      <div class="visual" aria-hidden="true">
+        <div class="halo"></div>
+        <div class="table-scene">
+          <div class="table"></div>
+          <div class="card card-a">A♠</div>
+          <div class="card card-k">K♠</div>
+          <div class="chip chip-one"></div>
+          <div class="chip chip-two"></div>
+          <div class="chip chip-three"></div>
+        </div>
+        <div class="lightline"></div>
+      </div>
+      <span class="corner-note">PRECISION · FOCUS · THE NEXT MOVE</span>
+    </section>
+  </main>
+</body>
+</html>
